@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.img-login{
+  background: url('/assets/img2.png') no-repeat;
+  position: absolute;
+  background-size: cover;
+  background-position: 65% 80px;
+  z-index: 1;
+}
+
+.cloud-1{
+  background: url('/assets/cloud_1.png') no-repeat;
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  width: 180px;
+  height: 100px;
+  background-size: contain;
+  z-index: 2;
+  transform: translateX(290%);
+  animation: cloud_one 25.5s ease-in .9s infinite;
+}
+.cloud-2{
+  background: url('/assets/cloud_2.png') no-repeat;
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  width: 200px;
+  height: 100px;
+  background-size: contain;
+  z-index: 0;
+  transform: translateX(290%);
+  animation: cloud_two 18.5s ease-in .9s infinite;
+}
+
+/* keyframs */
+
+@keyframes cloud_one{
+  0%{
+    transform: translateX(290%);
+  }100%{
+  
+    transform: translateX(-250%);
+  }
+}
+@keyframes cloud_two{
+  0%{
+    transform: translateX(160%);
+  }100%{
+  
+    transform: translateX(-250%);
+  }
+}
+
+.input-group{
+  @apply flex border rounded-xl relative
+}
+.input-group *:focus{
+  color: black;
+}
+
+.input-text{
+  @apply w-full py-3 px-5 border border-r-0 rounded-xl bg-slate-50 outline-none 
+}
+
+.input-text:focus + span  * {
+  color: #6366f1;
+}
+.btn{
+  @apply w-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-md py-3 text-gray-50 text-lg hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:border-blue-500 hover:border hover:text-blue-700 duration-300
+}
