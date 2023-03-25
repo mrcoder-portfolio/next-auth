@@ -30,11 +30,11 @@ export default function Login() {
     }
     // google handler function
     async function handleGoogleSignIn(){
-        signIn('google' , {callbackUrl: 'http://localhost:3000'})
+        signIn('google' , {callbackUrl: process.env.BASE_URL || 'http://localhost:3000'})
     }
     // github handler function
     async function handleGithubSignIn(){
-        signIn('github' , {callbackUrl: 'http://localhost:3000'})
+        signIn('github' , {callbackUrl: process.env.BASE_URL || 'http://localhost:3000'})
     }
     return <>
         <Layout>
