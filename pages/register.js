@@ -27,15 +27,15 @@ export default function Register() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(value)
         }
-        await fetch(process.env.BASE_URL + '/api/auth/Signup' || 'http://localhost:3000/api/auth/Signup' , options).then(res => res.json()).then(data => {
-            data && router.push(process.env.BASE_URL || "http://localhost:3000/")
+        await fetch(process.env.BASE_URL + '/api/auth/Signup' , options).then(res => res.json()).then(data => {
+            data && router.push(process.env.BASE_URL)
         })
     }
     async function handleGoogleSignIn(){
-        signIn('google' , {callbackUrl: process.env.BASE_URL || 'http://localhost:3000'})
+        signIn('google' , {callbackUrl: process.env.BASE_URL})
     }
-    async function handleGithubSignIn(){process.env.BASE_URL || 
-        signIn('github' , {callbackUrl: process.env.BASE_URL || 'http://localhost:3000'})
+    async function handleGithubSignIn(){
+        signIn('github' , {callbackUrl: process.env.BASE_URL})
     }
     return <>
         <Layout>
@@ -44,8 +44,7 @@ export default function Register() {
             </Head>
             <section className="w-3/4 mx-auto flex flex-col gap-4">
                 <div className="title">
-                    <h1 className="text-gray-800 text-4xl font-bold py-4">Explore</h1>
-                    <p className='text-gray-400'>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    <h1 className="text-gray-800 text-4xl font-bold py-4">Create Your Account</h1>
                 </div>
                 {/* form */}
                 <form className='flex flex-col gap-5' onSubmit={formik.handleSubmit}>

@@ -30,11 +30,11 @@ export default function Login() {
     }
     // google handler function
     async function handleGoogleSignIn(){
-        signIn('google' , {callbackUrl: process.env.BASE_URL || 'http://localhost:3000'})
+        signIn('google' , {callbackUrl: process.env.BASE_URL})
     }
     // github handler function
     async function handleGithubSignIn(){
-        signIn('github' , {callbackUrl: process.env.BASE_URL || 'http://localhost:3000'})
+        signIn('github' , {callbackUrl: process.env.BASE_URL})
     }
     return <>
         <Layout>
@@ -43,8 +43,7 @@ export default function Login() {
             </Head>
             <section className="w-3/4 mx-auto flex flex-col gap-4">
                 <div className="title">
-                    <h1 className="text-gray-800 text-4xl font-bold py-4">Explore</h1>
-                    <p className='text-gray-400'>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    <h1 className="text-gray-800 text-4xl font-bold py-4">Welcome Back!</h1>
                 </div>
                 {/* form */}
                 <form className='flex flex-col gap-5' onSubmit={formik.handleSubmit}>
